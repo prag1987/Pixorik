@@ -27,7 +27,7 @@ WHAT'S ALREADY DONE
 3 THINGS TO DO BEFORE GOING LIVE
   1) FORM: go to web3forms.com, get a free key, and in index.html
      replace  YOUR_WEB3FORMS_KEY_HERE  with it. Then form emails reach you.
-  2) EMAIL: replace hello@pixorik.com with your real email (footer + form).
+  2) EMAIL: replace contact@pixorik.com with your real email (footer + form).
   3) TEAM PHOTOS (optional): drop headshots in assets/ and swap the
      VP / PM initials in the two team cards for <img> tags.
   4) NDA CHECK: confirm with Vineet which government/healthcare apps

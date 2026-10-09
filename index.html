@@ -376,7 +376,7 @@
           <li>Design and development under one roof</li>
           <li>Clear timelines, no surprises</li>
         </ul>
-        <p style="color:rgba(255,255,255,.72)">Prefer email? <a class="mail" href="mailto:hello@pixorik.com">hello@pixorik.com</a></p>
+        <p style="color:rgba(255,255,255,.72)">Prefer email? <a class="mail" href="mailto:contact@pixorik.com">contact@pixorik.com</a></p>
       </div>
       <form id="projectForm" novalidate>
         <!-- Web3Forms: paste your access key from web3forms.com in the value below -->
@@ -411,7 +411,7 @@
   <div class="wrap foot">
     <a href="#top" class="brand" style="font-size:19px"><img src="assets/brand/pixorik-logo.svg" alt="" style="height:26px">Pixorik</a>
     <div>© 2026 Pixorik. Mobile app design and development.</div>
-    <a href="mailto:hello@pixorik.com">hello@pixorik.com</a>
+    <a href="mailto:contact@pixorik.com">contact@pixorik.com</a>
   </div>
 </footer>
 
@@ -497,15 +497,15 @@
     }
     const key=form.access_key.value;
     if(!key||key.includes('YOUR_WEB3FORMS_KEY')){
-      show('err','This form isn’t connected yet. Email us at hello@pixorik.com instead.');return;
+      show('err','This form isn’t connected yet. Email us at contact@pixorik.com instead.');return;
     }
     sendBtn.disabled=true;sendBtn.textContent='Sending…';show('wait','Sending your project details…');
     try{
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
       const d=await res.json();
       if(d.success){show('ok','Project details sent. We’ll reply within one business day.');form.reset();}
-      else show('err','Your message didn’t go through. Email us at hello@pixorik.com.');
-    }catch{show('err','No connection. Check your internet and try again, or email hello@pixorik.com.');}
+      else show('err','Your message didn’t go through. Email us at contact@pixorik.com.');
+    }catch{show('err','No connection. Check your internet and try again, or email contact@pixorik.com.');}
     sendBtn.disabled=false;sendBtn.textContent='Send project details';
   });
 </script>
