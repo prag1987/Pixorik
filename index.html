@@ -6,6 +6,15 @@
 <title>Pixorik — Mobile app design & development studio</title>
 <meta name="description" content="Pixorik designs and builds mobile apps for US and global businesses. 20+ years of experience, 30+ apps live on the App Store and Google Play.">
 <meta name="theme-color" content="#0A0F2F">
+<link rel="canonical" href="https://pixorik.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixorik">
+<meta property="og:title" content="Pixorik — We design and build apps that ship">
+<meta property="og:description" content="Mobile app design and development studio. 20+ years of experience, 30+ apps live on the App Store and Google Play.">
+<meta property="og:url" content="https://pixorik.com/">
+<meta property="og:image" content="https://pixorik.com/assets/ux/ux-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Pixorik","url":"https://pixorik.com/","logo":"https://pixorik.com/assets/brand/pixorik-logo.svg","email":"contact@pixorik.com","description":"Mobile app design and development studio for US, UK and international businesses."}</script>
 <link rel="icon" href="assets/brand/pixorik-logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,7 +96,7 @@
   @media(max-width:820px){.head{grid-template-columns:1fr;gap:18px}}
 
   /* ---------- WORK: home-screen of shipped apps ---------- */
-  #work{padding-top:40px}
+  #work{padding-top:72px}
   .springboard{background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:64px 56px 56px;position:relative;overflow:hidden}
   .springboard::before{content:"";position:absolute;inset:auto -10% -60% auto;width:70%;aspect-ratio:1;border-radius:50%;
     background:radial-gradient(closest-side,rgba(162,217,247,.22),transparent);pointer-events:none}
@@ -229,6 +238,103 @@
   .s-links .btn{padding:12px 20px;font-size:15px}
   .s-role{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
   .s-role b{color:var(--ink);font-weight:600}
+
+  /* ---------- PREVIEW ADDITIONS ---------- */
+  /* mobile nav */
+  .menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--white);cursor:pointer;place-items:center;flex-shrink:0}
+  .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .2s,background .2s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+  .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+  .nav.open .menu-btn span{background:transparent}
+  .nav.open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+  .nav.open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+  .nav-right{display:flex;align-items:center;gap:10px}
+  .mobile-links{display:none}
+  @media(max-width:820px){
+    .menu-btn{display:grid}
+    .mobile-links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:72px;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 16px 20px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+    .nav.open .mobile-links{opacity:1;transform:none;pointer-events:auto}
+    .mobile-links a{padding:16px 4px;font-size:19px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+    .mobile-links a:last-child{border-bottom:0}
+  }
+  /* trust bar */
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:-40px;position:relative;z-index:2;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+  .trust > div{padding:26px 28px;border-left:1px solid var(--line)}
+  .trust > div:first-child{border-left:0}
+  .trust b{display:block;font-size:34px;font-weight:900;letter-spacing:-.045em;line-height:1}
+  .trust span{display:block;margin-top:6px;color:var(--muted);font-size:14.5px;line-height:1.35}
+  .trust a{text-decoration:none}
+  .trust a:hover b{color:var(--cobalt)}
+  @media(max-width:820px){.trust{grid-template-columns:1fr 1fr;margin-top:-56px}.trust > div:nth-child(3){border-left:0}.trust > div:nth-child(n+3){border-top:1px solid var(--line)}.trust > div{padding:20px}.trust b{font-size:28px}}
+  /* clickable hero strip */
+  .phone{all:unset;box-sizing:border-box;flex-shrink:0;width:210px;aspect-ratio:9/19.5;border-radius:34px;padding:7px;background:var(--ink);cursor:pointer;
+    box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 24px 50px -18px rgba(10,15,47,.45);transition:transform .25s}
+  .phone:nth-child(even){transform:translateY(40px)}
+  .phone:hover{transform:translateY(-8px)}
+  .phone:nth-child(even):hover{transform:translateY(32px)}
+  .phone:focus-visible{outline:3px solid var(--cobalt);outline-offset:4px}
+  @media(max-width:600px){.phone{width:150px;border-radius:26px;padding:5px}}
+  .strip-hint{margin-top:-64px;margin-bottom:0;text-align:center;color:var(--muted);font-size:14px;position:relative}
+  /* springboard tap cue */
+  .app-view{font-size:12.5px;font-weight:700;color:var(--sky);opacity:.85;margin-top:-4px;letter-spacing:.01em}
+  .app:hover .app-view{opacity:1;text-decoration:underline}
+  /* case result tag */
+  .case-tag{display:inline-block;margin-bottom:10px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--cobalt)}
+  /* popup CTA */
+  .s-cta{margin-top:22px;padding:20px 22px;border-radius:var(--radius-md);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .s-cta p{font-weight:600;max-width:20em;line-height:1.35}
+  .s-cta .btn{padding:12px 20px;font-size:15px}
+  /* form extras */
+  .field .opt{color:var(--muted);font-weight:500}
+  .form-done{display:none;text-align:center;padding:12px 4px}
+  .form-done h3{font-size:26px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+  .form-done p{color:var(--muted);margin-bottom:18px}
+  form.sent .form-fields{display:none}
+  form.sent .form-done{display:block}
+  .form-fields{display:flex;flex-direction:column;gap:18px}
+  /* sticky mobile CTA */
+  .m-cta{display:none}
+  @media(max-width:820px){
+    .m-cta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;box-shadow:0 12px 30px -8px rgba(10,15,47,.5);transform:translateY(140%);transition:transform .3s}
+    .m-cta.show{transform:none}
+    footer{padding-bottom:96px}
+  }
+  /* spacing + heading fixes */
+  #work{padding-bottom:56px}
+  #services{padding-top:64px}
+  .head h2,.contact h2{letter-spacing:-.035em;word-spacing:.1em}
+  .hero h1{letter-spacing:-.045em;word-spacing:.08em}
+
+  /* featured work */
+  .feat-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+  .feat-head h3{font-size:28px;font-weight:800;letter-spacing:-.035em}
+  .feat-head span{color:var(--muted);font-size:15px}
+  .feats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+  @media(max-width:900px){.feats{grid-template-columns:1fr}}
+  .feat{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+  .feat:hover{box-shadow:0 24px 50px -24px rgba(10,15,47,.35)}
+  .f-shots{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:center;gap:14px;padding:28px 24px 0;height:320px;overflow:hidden;
+    background:linear-gradient(180deg,#E7ECF6,#F3F5F8)}
+  .f-shots:focus-visible{outline:3px solid var(--cobalt);outline-offset:-3px}
+  .f-shots img{height:100%;width:auto;border-radius:22px 22px 0 0;border:6px solid var(--ink);border-bottom:0;background:#fff;object-fit:cover;object-position:top;flex-shrink:0;transition:transform .3s}
+  .f-shots img:nth-child(2){transform:translateY(22px)}
+  .f-shots:hover img{transform:translateY(-6px)}
+  .f-shots:hover img:nth-child(2){transform:translateY(12px)}
+  @media(max-width:600px){.f-shots{height:260px;gap:10px;padding:22px 14px 0}.f-shots img:nth-child(3){display:none}}
+  .f-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .f-top{display:flex;align-items:center;gap:16px}
+  .f-top .ico{width:64px;height:64px;border-radius:16px}
+  .f-top h3{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+  .f-kind{color:var(--cobalt);font-weight:600;font-size:14.5px;margin-top:3px}
+  .f-body p{color:var(--muted);font-size:16px}
+  .f-role{font-size:14.5px;color:var(--muted)}.f-role b{color:var(--ink);font-weight:600}
+  .f-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+  .f-actions .btn{padding:12px 20px;font-size:15px}
+  .ai-f{top:-8px;right:-10px}
+  .springboard{margin-top:0}
+  /* scroll reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .rv.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -239,8 +345,12 @@
     <div class="nav-links">
       <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a>
     </div>
-    <a href="#contact" class="btn btn-ink btn-sm">Start a project</a>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-ink btn-sm">Start a project</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileLinks"><span></span></button>
+    </div>
   </div>
+  <div class="mobile-links" id="mobileLinks"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </nav>
 
 <header class="hero" id="top">
@@ -255,9 +365,18 @@
     </div>
   </div>
   <div class="strip" aria-label="Screens from apps we've shipped">
-    <div class="strip-track" id="strip"></div>
+    <div class="strip-track" id="strip"><button class="phone" type="button" data-i="0" aria-label="Open MMAI Angel"><img src="assets/shots/mmai-2.webp" alt=""></button><button class="phone" type="button" data-i="2" aria-label="Open Tap It Clean"><img src="assets/shots/tapit-1.webp" alt=""></button><button class="phone" type="button" data-i="8" aria-label="Open Palm Springs Modernism Tour"><img src="assets/shots/palmsprings-1.webp" alt=""></button><button class="phone" type="button" data-i="3" aria-label="Open Brownsville Mosquito Notices"><img src="assets/shots/brownsville-2.webp" alt=""></button><button class="phone" type="button" data-i="1" aria-label="Open Mr. Know It All Towing"><img src="assets/shots/towing-2.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="7" aria-label="Open UC Davis BRD"><img src="assets/shots/ucdavis-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="0" aria-label="Open MMAI Angel"><img src="assets/shots/mmai-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="2" aria-label="Open Tap It Clean"><img src="assets/shots/tapit-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="8" aria-label="Open Palm Springs Modernism Tour"><img src="assets/shots/palmsprings-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="1" aria-label="Open Mr. Know It All Towing"><img src="assets/shots/towing-4.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="3" aria-label="Open Brownsville Mosquito Notices"><img src="assets/shots/brownsville-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="7" aria-label="Open UC Davis BRD"><img src="assets/shots/ucdavis-2.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="0" aria-hidden="true" tabindex="-1" aria-label="Open MMAI Angel"><img src="assets/shots/mmai-2.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="2" aria-hidden="true" tabindex="-1" aria-label="Open Tap It Clean"><img src="assets/shots/tapit-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="8" aria-hidden="true" tabindex="-1" aria-label="Open Palm Springs Modernism Tour"><img src="assets/shots/palmsprings-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="3" aria-hidden="true" tabindex="-1" aria-label="Open Brownsville Mosquito Notices"><img src="assets/shots/brownsville-2.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="1" aria-hidden="true" tabindex="-1" aria-label="Open Mr. Know It All Towing"><img src="assets/shots/towing-2.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="7" aria-hidden="true" tabindex="-1" aria-label="Open UC Davis BRD"><img src="assets/shots/ucdavis-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="0" aria-hidden="true" tabindex="-1" aria-label="Open MMAI Angel"><img src="assets/shots/mmai-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="2" aria-hidden="true" tabindex="-1" aria-label="Open Tap It Clean"><img src="assets/shots/tapit-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="8" aria-hidden="true" tabindex="-1" aria-label="Open Palm Springs Modernism Tour"><img src="assets/shots/palmsprings-3.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="1" aria-hidden="true" tabindex="-1" aria-label="Open Mr. Know It All Towing"><img src="assets/shots/towing-4.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="3" aria-hidden="true" tabindex="-1" aria-label="Open Brownsville Mosquito Notices"><img src="assets/shots/brownsville-1.webp" alt="" loading="lazy"></button><button class="phone" type="button" data-i="7" aria-hidden="true" tabindex="-1" aria-label="Open UC Davis BRD"><img src="assets/shots/ucdavis-2.webp" alt="" loading="lazy"></button></div>
   </div>
 </header>
+
+<div class="wrap">
+  <div class="trust rv" aria-label="Pixorik at a glance">
+    <div><b>20+</b><span>years building mobile, web and cloud products</span></div>
+    <div><b>30+</b><span>apps live on the App Store and Google Play</span></div>
+    <div><a href="https://www.fiverr.com/s/jjAY9yZ" target="_blank" rel="noopener"><b>100+ ★★★★★</b><span>five-star client reviews on Fiverr ↗</span></a></div>
+    <div><b>1 team</b><span>design, engineering and launch under one roof</span></div>
+  </div>
+</div>
 
 <section id="work">
   <div class="wrap">
@@ -266,21 +385,71 @@
       <p>Consumer apps, marketplaces, healthcare, sports and public-sector platforms, designed and engineered end to end by our team.</p>
     </div>
 
+    <div class="feat-head"><h3>Featured work</h3><span>Four products we designed, built and shipped</span></div>
+    <div class="feats">
+      <article class="feat rv">
+        <button class="f-shots" type="button" data-i="0" aria-label="Open MMAI Angel details"><img src="assets/shots/mmai-1.webp" alt="MMAI Angel screen" loading="lazy"><img src="assets/shots/mmai-2.webp" alt="MMAI Angel screen" loading="lazy"></button>
+        <div class="f-body">
+          <div class="f-top"><span class="ico-wrap"><span class="ico"><img src="assets/icons/mmai.webp" alt=""></span><span class="ai ai-f">AI</span></span>
+            <div><h3>MMAI Angel</h3><div class="f-kind">AI companion</div></div></div>
+          <p>An AI virtual companion we designed and built end to end, with real-time conversational AI and image analysis powered by a custom API integration across iOS and Android.</p>
+          <div class="f-role">Our role: <b>Design, development and AI integration</b></div>
+          <div class="f-actions"><button class="btn btn-ink" type="button" data-i="0">See screens</button><a class="btn btn-line" href="https://apps.apple.com/us/app/mmai-angel/id6736985108" target="_blank" rel="noopener">App Store ↗</a></div>
+        </div>
+      </article>
+      <article class="feat rv">
+        <button class="f-shots" type="button" data-i="1" aria-label="Open Mr. Know It All Towing details"><img src="assets/shots/towing-1.webp" alt="Mr. Know It All Towing screen" loading="lazy"><img src="assets/shots/towing-2.webp" alt="Mr. Know It All Towing screen" loading="lazy"><img src="assets/shots/towing-4.webp" alt="Mr. Know It All Towing screen" loading="lazy"></button>
+        <div class="f-body">
+          <div class="f-top"><span class="ico-wrap"><span class="ico"><img src="assets/icons/towing.webp" alt=""></span></span>
+            <div><h3>Mr. Know It All Towing</h3><div class="f-kind">On-demand marketplace</div></div></div>
+          <p>Customer and driver apps with nearby-driver allocation, live GPS tracking and the full job lifecycle. Built for US roadside operations.</p>
+          <div class="f-role">Our role: <b>Design and development</b></div>
+          <div class="f-actions"><button class="btn btn-ink" type="button" data-i="1">See screens</button><a class="btn btn-line" href="https://apps.apple.com/in/app/mr-know-it-all-towing/id6476615478" target="_blank" rel="noopener">App Store ↗</a></div>
+        </div>
+      </article>
+      <article class="feat rv">
+        <button class="f-shots" type="button" data-i="2" aria-label="Open Tap It Clean details"><img src="assets/shots/tapit-1.webp" alt="Tap It Clean screen" loading="lazy"><img src="assets/shots/tapit-2.webp" alt="Tap It Clean screen" loading="lazy"><img src="assets/shots/tapit-3.webp" alt="Tap It Clean screen" loading="lazy"></button>
+        <div class="f-body">
+          <div class="f-top"><span class="ico-wrap"><span class="ico"><img src="assets/icons/tapit.webp" alt=""></span></span>
+            <div><h3>Tap It Clean</h3><div class="f-kind">Services marketplace</div></div></div>
+          <p>A two-sided marketplace for trash, junk and field services, with service requests, a live status timeline, provider matching and job tracking.</p>
+          <div class="f-role">Our role: <b>Design and development</b></div>
+          <div class="f-actions"><button class="btn btn-ink" type="button" data-i="2">See screens</button><a class="btn btn-line" href="https://apps.apple.com/in/app/tap-it-clean-it/id6744843037" target="_blank" rel="noopener">Customer app on App Store ↗</a></div>
+        </div>
+      </article>
+      <article class="feat rv">
+        <button class="f-shots" type="button" data-i="8" aria-label="Open Palm Springs Modernism Tour details"><img src="assets/shots/palmsprings-1.webp" alt="Palm Springs Modernism Tour screen" loading="lazy"><img src="assets/shots/palmsprings-2.webp" alt="Palm Springs Modernism Tour screen" loading="lazy"><img src="assets/shots/palmsprings-3.webp" alt="Palm Springs Modernism Tour screen" loading="lazy"></button>
+        <div class="f-body">
+          <div class="f-top"><span class="ico-wrap"><span class="ico"><img src="assets/icons/palmsprings.webp" alt=""></span></span>
+            <div><h3>Palm Springs Modernism Tour</h3><div class="f-kind">Travel</div></div></div>
+          <p>A self-guided architecture tour of Palm Springs modernism.</p>
+          <div class="f-role">Our role: <b>Design and development</b></div>
+          <div class="f-actions"><button class="btn btn-ink" type="button" data-i="8">See screens</button><a class="btn btn-line" href="https://apps.apple.com/us/app/palm-springs-modernism-tour/id576934996" target="_blank" rel="noopener">App Store ↗</a></div>
+        </div>
+      </article>
+    </div>
+
     <div class="springboard">
       <div class="sb-top">
-        <h3>Shipped apps</h3>
-        <span>Tap an app to see screens and store links</span>
+        <h3>More shipped apps</h3>
+        <span>Tap any app for screens and store links</span>
       </div>
-      <div class="apps" id="apps"></div>
+      <div class="apps" id="apps">
+<button class="app" type="button" data-i="3" aria-label="Brownsville Mosquito Notices, Public sector. Open details"><span class="ico-wrap"><span class="ico"><img src="assets/icons/brownsville.webp" alt=""></span></span><span class="app-name">Brownsville Mosquito Notices</span><span class="app-kind">Public sector</span><span class="app-view">View →</span></button>
+<button class="app" type="button" data-i="4" aria-label="Saginaw Mosquito Notifications, Public sector. Open details"><span class="ico-wrap"><span class="ico fallback">SM</span></span><span class="app-name">Saginaw Mosquito Notifications</span><span class="app-kind">Public sector</span><span class="app-view">View →</span></button>
+<button class="app" type="button" data-i="5" aria-label="CLIPitc Field Service, Field service. Open details"><span class="ico-wrap"><span class="ico"><img src="assets/icons/clipitc.webp" alt=""></span></span><span class="app-name">CLIPitc Field Service</span><span class="app-kind">Field service</span><span class="app-view">View →</span></button>
+<button class="app" type="button" data-i="6" aria-label="Tipsy Putt, Membership &amp; gaming. Open details"><span class="ico-wrap"><span class="ico"><img src="assets/icons/tipsyputt.webp" alt=""></span></span><span class="app-name">Tipsy Putt</span><span class="app-kind">Membership &amp; gaming</span><span class="app-view">View →</span></button>
+<button class="app" type="button" data-i="7" aria-label="UC Davis BRD, Healthcare. Open details"><span class="ico-wrap"><span class="ico"><img src="assets/icons/ucdavis.webp" alt=""></span></span><span class="app-name">UC Davis BRD</span><span class="app-kind">Healthcare</span><span class="app-view">View →</span></button>
+      </div>
     </div>
 
     <div class="cases">
       <figure class="case">
-        <img src="assets/ux/ux-1.png" alt="Flight booking app screens: home, phone sign-in, MPIN setup, profile and offline state" loading="lazy">
+        <img src="assets/ux/ux-1.webp" alt="Flight booking app screens: home, phone sign-in, MPIN setup, profile and offline state" loading="lazy">
         <figcaption class="case-cap"><h3>Flight and travel booking</h3><p>Search, fare calendar and booking flow across a complex, data-heavy journey.</p></figcaption>
       </figure>
       <figure class="case">
-        <img src="assets/ux/ux-2.png" alt="Travel app onboarding and wallet screens" loading="lazy">
+        <img src="assets/ux/ux-2.webp" alt="Travel app onboarding and wallet screens" loading="lazy">
         <figcaption class="case-cap"><h3>Onboarding and wallet</h3><p>Onboarding, secure MPIN, offline states and full ticket management.</p></figcaption>
       </figure>
     </div>
@@ -350,7 +519,7 @@
           <div class="avatar"><!-- photo: <img src="assets/team/pragyesh.jpg" alt="Pragyesh Mishra"> -->PM</div>
           <div><h3>Pragyesh Mishra</h3><div class="role">Design lead, product and UI/UX</div></div>
         </div>
-        <p>16+ years designing mobile app and SaaS interfaces for US and European clients. He turns complex products into clean, intuitive experiences people enjoy using.</p>
+        <p>14+ years designing mobile app and SaaS interfaces for US and European clients. He turns complex products into clean, intuitive experiences people enjoy using.</p>
         <div class="links">
           <a class="link" href="https://www.linkedin.com/in/pragyesh-mishra/" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a class="link" href="https://www.fiverr.com/s/jjAY9yZ" target="_blank" rel="noopener">Fiverr ↗</a>
@@ -379,6 +548,7 @@
         <p style="color:rgba(255,255,255,.72)">Prefer email? <a class="mail" href="mailto:contact@pixorik.com">contact@pixorik.com</a></p>
       </div>
       <form id="projectForm" novalidate>
+        <div class="form-fields">
         <!-- Web3Forms: paste your access key from web3forms.com in the value below -->
         <input type="hidden" name="access_key" value="8918f144-dcab-4cf5-a851-1bbaf1717746">
         <input type="hidden" name="subject" value="New project enquiry — Pixorik">
@@ -398,10 +568,18 @@
             <option>Something else</option>
           </select>
         </div>
+        <div class="row2">
+          <div class="field"><label for="f-budget">Budget <span class="opt">(optional)</span></label>
+            <select id="f-budget" name="budget"><option value="">Select a range</option><option>Under $5k</option><option>$5k – $15k</option><option>$15k – $50k</option><option>$50k+</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="f-time">Timeline <span class="opt">(optional)</span></label>
+            <select id="f-time" name="timeline"><option value="">Select a timeline</option><option>As soon as possible</option><option>1 – 3 months</option><option>3 – 6 months</option><option>Just exploring</option></select></div>
+        </div>
         <div class="field"><label for="f-msg">Tell us a bit more</label><textarea id="f-msg" name="message" required placeholder="Your idea, timeline or goals, in a few lines"></textarea></div>
         <button type="submit" class="btn btn-ink">Send project details</button>
         <div class="status" id="formStatus" role="status" aria-live="polite"></div>
         <p class="note">We never share your details.</p>
+        </div>
+        <div class="form-done" role="status"><h3>Thanks, we've got it.</h3><p>We'll reply within one business day. In the meantime, have a look at the apps we've shipped.</p><a class="btn btn-line" href="#work">See our apps</a></div>
       </form>
     </div>
   </div>
@@ -411,9 +589,11 @@
   <div class="wrap foot">
     <a href="#top" class="brand" style="font-size:19px"><img src="assets/brand/pixorik-logo.svg" alt="" style="height:26px">Pixorik</a>
     <div>© 2026 Pixorik. Mobile app design and development.</div>
-    <a href="mailto:contact@pixorik.com">contact@pixorik.com</a>
+    <div style="display:flex;gap:20px;flex-wrap:wrap"><a href="https://www.linkedin.com/in/vineet-patidar-41941713/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="mailto:contact@pixorik.com">contact@pixorik.com</a></div>
   </div>
 </footer>
+
+<a href="#contact" class="btn btn-ink m-cta" id="mCta">Start your project</a>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sName">
   <div class="sheet-in">
@@ -423,6 +603,7 @@
     <div class="shots" id="sShots"></div>
     <div class="s-links" id="sLinks"></div>
     <div class="s-role">Our role: <b id="sRole"></b></div>
+    <div class="s-cta"><p>Want something like this for your business?</p><a class="btn btn-ink" id="sCta" href="#contact">Start a project</a></div>
   </div>
 </dialog>
 
@@ -437,8 +618,7 @@
     {name:"CLIPitc Field Service",kind:"Field service",icon:"clipitc.webp",desc:"Field work, invoicing, routing and customer records, built over several years.",role:"Design and development",shots:["clipitc-1.webp","clipitc-3.webp","clipitc-4.webp","clipitc-5.webp","clipitc-6.webp"],links:[{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.clipitc.ClipitcNewMobile"}]},
     {name:"Tipsy Putt",kind:"Membership & gaming",icon:"tipsyputt.webp",desc:"A membership, promotions and gaming platform with Stripe, PassKit and location-management flows.",role:"Design and development",shots:["tipsyputt-1.webp","tipsyputt-2.webp","tipsyputt-3.webp","tipsyputt-5.webp"],links:[{label:"Website",url:"https://tipsyputt.com/app/"}]},
     {name:"UC Davis BRD",kind:"Healthcare",icon:"ucdavis.webp",desc:"A clinical scoring tool built for UC Davis.",role:"Design and development",shots:["ucdavis-1.webp","ucdavis-2.webp","ucdavis-3.webp","ucdavis-4.webp"],links:[{label:"App Store",url:"https://apps.apple.com/us/app/uc-davis-brd/id1189376374"}]},
-    {name:"Palm Springs Modernism Tour",kind:"Travel",icon:"palmsprings.webp",desc:"A self-guided architecture tour of Palm Springs modernism.",role:"Design and development",shots:["palmsprings-1.webp","palmsprings-2.webp","palmsprings-3.webp","palmsprings-4.webp","palmsprings-5.webp"],links:[{label:"App Store",url:"https://apps.apple.com/us/app/palm-springs-modernism-tour/id576934996"}]},
-    {name:"TownCup",kind:"Sports platform",icon:"towncup.svg",desc:"A sports social platform for teams, events, officials, scoring and payments, on a serverless real-time backend.",role:"Architecture and development",links:[{label:"Visit website",url:"https://www.towncup.com/"}]}
+    {name:"Palm Springs Modernism Tour",kind:"Travel",icon:"palmsprings.webp",desc:"A self-guided architecture tour of Palm Springs modernism.",role:"Design and development",shots:["palmsprings-1.webp","palmsprings-2.webp","palmsprings-3.webp","palmsprings-4.webp","palmsprings-5.webp"],links:[{label:"App Store",url:"https://apps.apple.com/us/app/palm-springs-modernism-tour/id576934996"}]}
   ];
 
   /* screens shown in the hero strip */
@@ -446,22 +626,8 @@
 
   const initials=n=>n.split(/\s+/).map(w=>w[0]).join('').replace(/[^A-Za-z]/g,'').slice(0,2).toUpperCase();
   const icoHTML=a=>a.icon?`<img src="assets/icons/${a.icon}" alt="">`:initials(a.name);
-
-  // hero strip (list duplicated for a seamless loop)
-  const strip=document.getElementById('strip');
-  strip.innerHTML=[...STRIP,...STRIP].map((s,i)=>`<div class="phone"${i>=STRIP.length?' aria-hidden="true"':''}><img src="assets/shots/${s}" alt="" ${i<4?'':'loading="lazy"'}></div>`).join('');
-
-  // home-screen grid
-  const appsEl=document.getElementById('apps');
-  APPS.forEach((a,i)=>{
-    const b=document.createElement('button');
-    b.className='app';b.type='button';
-    b.setAttribute('aria-label',`${a.name}, ${a.kind}. Open details`);
-    b.innerHTML=`<span class="ico-wrap"><span class="ico${a.icon?'':' fallback'}">${icoHTML(a)}</span>${a.ai?'<span class="ai">AI</span>':''}</span>
-      <span class="app-name">${a.name}</span><span class="app-kind">${a.kind}</span>`;
-    b.addEventListener('click',()=>openSheet(i,b));
-    appsEl.appendChild(b);
-  });
+  // pre-rendered markup (good for SEO); JS only wires the clicks
+  document.querySelectorAll('[data-i]').forEach(b=>b.addEventListener('click',()=>openSheet(+b.dataset.i,b)));
 
   // app details sheet
   const sheet=document.getElementById('sheet');let lastBtn=null;
@@ -475,16 +641,32 @@
     document.getElementById('sRole').textContent=a.role;
     document.getElementById('sShots').innerHTML=(a.shots||[]).map(s=>`<img src="assets/shots/${s}" alt="${a.name} screen" loading="lazy">`).join('');
     document.getElementById('sLinks').innerHTML=a.links.map((l,k)=>`<a class="btn ${k===0?'btn-ink':'btn-line'}" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join('');
+    document.getElementById('sCta').onclick=()=>{sheet.close();const t=document.getElementById('f-type');if(t&&!t.value)t.value='Full product (design + development)'};
     sheet.showModal();document.getElementById('sShots').scrollLeft=0;
   }
   const closeSheet=()=>{sheet.close()};
   document.getElementById('sClose').addEventListener('click',closeSheet);
   sheet.addEventListener('click',e=>{if(e.target===sheet)closeSheet()});
-  sheet.addEventListener('close',()=>{lastBtn&&lastBtn.focus()});
+  sheet.addEventListener('close',()=>{if(!location.hash||location.hash!=='#contact')lastBtn&&lastBtn.focus()});
 
   // nav border on scroll
   const nav=document.getElementById('nav');
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
+
+
+  // mobile menu
+  const menuBtn=document.getElementById('menuBtn');
+  menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('#mobileLinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+  // sticky CTA on mobile: show after hero, hide near the contact form
+  const mCta=document.getElementById('mCta'),contactEl=document.getElementById('contact');
+  const updCta=()=>{const r=contactEl.getBoundingClientRect();mCta.classList.toggle('show',scrollY>600&&r.top>innerHeight*0.6)};
+  addEventListener('scroll',updCta,{passive:true});updCta();
+  // scroll reveal
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+    document.querySelectorAll('.head,.feat-head,.feat,.springboard,.case,.svc > div,.steps li,.person,.proof,.contact,.trust').forEach(el=>{el.classList.add('rv');io.observe(el)});
+  }
 
   // contact form (Web3Forms)
   const form=document.getElementById('projectForm'),status=document.getElementById('formStatus'),sendBtn=form.querySelector('button[type=submit]');
@@ -503,7 +685,7 @@
     try{
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
       const d=await res.json();
-      if(d.success){show('ok','Project details sent. We’ll reply within one business day.');form.reset();}
+      if(d.success){form.reset();form.classList.add('sent');}
       else show('err','Your message didn’t go through. Email us at contact@pixorik.com.');
     }catch{show('err','No connection. Check your internet and try again, or email contact@pixorik.com.');}
     sendBtn.disabled=false;sendBtn.textContent='Send project details';
